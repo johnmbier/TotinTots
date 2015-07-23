@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ .notBootstrap{
+  padding-left: 5%;
+  padding-right: 5%;
+ }
+ .yield{
+  margin: auto;
+  width: 90%;
+ }
