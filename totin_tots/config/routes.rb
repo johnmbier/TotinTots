@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   
   
-
-  get 'sessions/new'
-
-  get 'sessions/create'
+  get '/login' => 'sessions#new', as: :login
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy', as: :logout
 
    resources :questions
 
@@ -17,8 +16,9 @@ Rails.application.routes.draw do
    root 'welcome#index'
 
 #  Prefix Verb   URI Pattern                              Controller#Action
-#     sessions_new GET    /sessions/new(.:format)                  sessions#new
-#  sessions_create GET    /sessions/create(.:format)               sessions#create
+#            login GET    /login(.:format)                         sessions#new
+#                  POST   /login(.:format)                         sessions#create
+#           logout DELETE /logout(.:format)                        sessions#destroy
 #        questions GET    /questions(.:format)                     questions#index
 #                  POST   /questions(.:format)                     questions#create
 #     new_question GET    /questions/new(.:format)                 questions#new
@@ -52,5 +52,4 @@ Rails.application.routes.draw do
 #                  PUT    /lists/:id(.:format)                     lists#update
 #                  DELETE /lists/:id(.:format)                     lists#destroy
 #             root GET    /                                        welcome#index
-  
 end

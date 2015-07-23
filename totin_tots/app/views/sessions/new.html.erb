@@ -1,2 +1,7 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+
+<h1>Log In to start packing</h1>
+<%= form_tag '/login', method: :post do %>
+  <label>name: </label><%= text_field_tag :name %>
+  <label>Password: </label><%= text_field_tag :password %>
+  <%= submit_tag 'login' %>
+<% end %>

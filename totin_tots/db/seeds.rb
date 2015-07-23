@@ -6,6 +6,7 @@
     # t.integer  "quantity"
   
 Item.destroy_all
+User.destroy_all
 
 Item.create([{name: 'Pacifier', age_group: 'infant', quantity: '2'}])
 Item.create([{name: 'Jacket', age_group: 'toddler', weather: 'cold', quantity: '1'}])
@@ -16,3 +17,7 @@ Item.create([{name: 'Backup Outfit', age_group: 'all', quantity: '1'}])
 Item.create([{name: 'Outfits', age_group: 'all', quantity: '1'}])
 Item.create([{name: 'Formal Outfit', age_group: 'all', activity: 'wedding/funeral', quantity: '1'}])
 Item.create([{name: 'Gloves', age_group: 'all', weather: 'cold', quantity: '1'}])
+
+
+User.create([{name: 'john', password_digest: '1111'}])
+User.create([{name: 'user2', password_digest: '2222'}])
