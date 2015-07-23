@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_name: MyString
+  age_group: MyString
+  quantity: 1
+  status: MyString
+
+two:
+  item_name: MyString
+  age_group: MyString
+  quantity: 1
+  status: MyString
