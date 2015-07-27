@@ -16,11 +16,14 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ @import "utilities";
+ @import "welcome";
+
  .notBootstrap{
   padding-left: 5%;
   padding-right: 5%;
  }
  .yield{
   margin: auto;
-  width: 90%;
+  width: 70%;
  }

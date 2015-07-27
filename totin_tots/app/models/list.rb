@@ -1,5 +1,6 @@
 class List < ActiveRecord::Base
-	 has_and_belongs_to_many :items
+	 has_many :items
+   belongs_to :user
 	 validates :item_name, :presence => true, :if => :active_or_item_name?
 	 validates :age_group, :presence => true, :if => :active_or_age_group?
 	 validates :quantity,  :presence => true, :if => :active_or_quantity?

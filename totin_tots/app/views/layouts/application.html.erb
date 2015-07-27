@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TotinTots</title>
+  <title><%= yield(:title) %> | Totin' Tots</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
-<% if session[:user] %>
-  <p><%= "Currently logged in as #{session[:user]}." %></p>
-  <p><%= link_to "Log out", logout_path, method: :delete %></p>
-<% else %>
-  <p><%= link_to "Log in", login_path %></p> 
-<% end %>
+     <%= render 'shared/navbar' %>
+     <div class="main-page-content <%=controller.controller_name %>">
+      <%= yield %>
+     </div>
+<%# if session[:user] %>
+  <!-- <p><%#= "Currently logged in as #{session[:user]}." %></p>
+  <p><%#= link_to "Log out", logout_path, method: :delete %></p>
+<%# else %>
+  <p><%#= link_to "Log in", login_path %></p> 
+<%# end %>
  
-
-  <%= yield %>
+<%# flash.each do |key, value| %>
+  <div class="alert alert-<%#=key%>" role="alert">
+    <%#= value %>
+  </div> -->
+<%# end %>
+  
 
 
 

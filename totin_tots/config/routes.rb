@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+   get  'about' => 'welcome#about', as: :about
+   get  'contact' => 'welcome#contact', as: :contact
+
   
   get '/login' => 'sessions#new', as: :login
   post '/login' => 'sessions#create'
@@ -7,15 +10,17 @@ Rails.application.routes.draw do
 
    resources :questions
 
-   resources :users
    
-   resources :lists do
-    resources :build, controller: 'lists/build'
-   end
+    resources :users 
+     resources :lists do
+      resources :build, controller: 'lists/build'
+     
+    end
 
    root 'welcome#index'
 
-#  Prefix Verb   URI Pattern                              Controller#Action
+
+#     Prefix Verb   URI Pattern                              Controller#Action
 #            login GET    /login(.:format)                         sessions#new
 #                  POST   /login(.:format)                         sessions#create
 #           logout DELETE /logout(.:format)                        sessions#destroy
