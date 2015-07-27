@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150724150456) do
+ActiveRecord::Schema.define(version: 20150727163232) do
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
@@ -32,6 +32,22 @@ ActiveRecord::Schema.define(version: 20150724150456) do
   add_index "items_and_lists", ["item_id"], name: "index_items_and_lists_on_item_id"
   add_index "items_and_lists", ["list_id"], name: "index_items_and_lists_on_list_id"
 
+  create_table "kids", force: :cascade do |t|
+    t.string   "name"
+    t.string   "age_group"
+    t.integer  "trip_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "item_id"
+    t.integer  "list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "lists", force: :cascade do |t|
     t.string   "item_name"
     t.string   "age_group"
@@ -42,6 +58,13 @@ ActiveRecord::Schema.define(version: 20150724150456) do
     t.string   "weather"
     t.string   "activity"
     t.integer  "user_id"
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.string   "weather"
+    t.string   "activity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

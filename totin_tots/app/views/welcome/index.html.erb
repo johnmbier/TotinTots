@@ -1,3 +1,6 @@
+<% provide(:home, "active") %>
+<% provide(:title, "Home") %>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,6 +25,19 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+<style>
+
+body {height:100%;
+    width:100%;
+    background-image: url('assets/tt-bg4.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: top;
+    margin-left: 0 pixels ;
+}
+
+</style>
+
   </head>
 
   <body>
@@ -43,8 +59,10 @@
      		<div class="col-md-6">
      			 <div class="jumbotron">
        				 <h1>Totin' Tots</h1>
-        				<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        				<p><a class="btn btn-lg btn-success" href="#" role="button">Start Packin'</a></p>
+        				<p class="lead"> The quick & easy packing list made just for parents travelling with infants & toddlers. Get your customized list in minutes!</p>
+        				
+        				<a href="<%= new_list_path %>" class="btn btn-lg btn-success"  role="button">Start Packin'</a>
+        				<!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Start Packin'</a></p> -->
       			 </div>
             </div>
         <div class="col-md-5"></div>

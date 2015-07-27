@@ -1,22 +1,29 @@
 <% provide(:login, "active") %>
 <% provide(:title, "Login") %>
-<div class="row">
-  <%= form_tag do %>
-    <fieldset>
-      <legend>Please Log In</legend>
-      <div class='col-md-4'>
-        <%= label_tag :name, 'Username:' %>
-        <%= text_field_tag :name, params[:name], class:'form-control' %>
 
-        <%= label_tag :password, 'Password:' %>
-        <%= text_field_tag :password, params[:password], class:'form-control' %>
-        <br>
 
-      <div>
-        <%= submit_tag "Login" %>
+<div class="container">
+      <div class="row">
+          <div class="col-md-1"></div>
+              <div class="col-md-6">
+              <%= form_tag do %>
+                <fieldset>
+                <legend>Please Log In</legend>
+                  <div class='col-md-8'>
+                  <%= label_tag :name, 'Username:' %>
+                  <%= text_field_tag :name, params[:name], class:'form-control' %>
+                  <%= label_tag :password, 'Password:' %>
+                  <%= text_field_tag :password, params[:password], class:'form-control' %>
+                  <br>
+                    <div>
+                      <%= submit_tag "Login" %>
+
+                    </div>
+                    <p> Don't have an account? <%= link_to "Register", new_user_path %> </p>
+                </fieldset>
+                      <% end %>
+                  </div>
+              </div>
+          </div>
       </div>
-    </fieldset>
-  <% end %>
 </div>
-
-<p> Don't have an account? <%= link_to "Register", new_user_path %> </p>
