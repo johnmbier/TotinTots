@@ -1,0 +1,50 @@
+<% provide(:home, "active") %>
+<% provide(:title, "Home") %>
+
+
+
+
+ <head>
+	
+<style>
+
+body {height:100%;
+    width:100%;
+    background-image: url('assets/tt-bg4.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: top;
+    margin-left: 0 pixels ;
+}
+
+</style>
+</head>
+
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+    	<div class="col-sm-3"></div>
+        <div class="col-sm-7">
+         <h1><p class="text-right"><%= link_to "Start Packing!", new_list_path %></p></h1>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+  </div>
+</body>	
+
+
+
+
+<p>
+ <%s= link_to "Start Packing!", new_list_path %>
+</p>
+
+  <!-- <p class="text-left">Left-aligned text.</p>
+  <p class="text-right">Right-aligned text.</p>      
+  <p class="text-center">Center-aligned text.</p> -->
+
+
+
+
+</html> s

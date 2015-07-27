@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  age_group: MyString
+  days: 1
+  weather: MyString
+  activity: MyString
+
+two:
+  name: MyString
+  age_group: MyString
+  days: 1
+  weather: MyString
+  activity: MyString

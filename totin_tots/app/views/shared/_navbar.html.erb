@@ -1,0 +1,46 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Totin' Tots</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">  
+      <ul class="nav navbar-nav navbar-right">
+        
+        <!-- login link shows up if not logged in and users name if they are logged in -->
+
+        <li class="<%= yield(:home) %>"><%= link_to "Home", root_path %></li>
+        <% if session[:user] %>
+        <p><%= "#{session[:user]}" %></p>
+       <li><%= link_to "Log out", logout_path, method: :delete %></li>
+        <% else %>
+        <li class="<%= yield(:login) %>"><%= link_to "Log in", login_path %></li> 
+        <% end %>
+        <li class="<%= yield(:about) %>"><%= link_to "About", about_path %></li>
+        <li class="<%= yield(:contact) %>"><%= link_to "Contact", contact_path %></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!-- mini jumbotron nav -->
+
+<!-- <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">About</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Totin' Tots</h3>
+      </div> -->
