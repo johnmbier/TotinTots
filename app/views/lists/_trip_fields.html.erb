@@ -1,0 +1,9 @@
+<p>
+  <%= f.label :weather, "Weather" %><br />
+  <%= f.text_area :weather, :rows => 3 %><br />
+  <%= f.check_box :_destroy %>
+  <%= f.label :_destroy, "Remove" %>
+</p>
+<% f.fields_for :kids do |builder| %>
+  <%= render 'kids_fields', :f => builder %>
+<% end %>

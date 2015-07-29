@@ -1,0 +1,18 @@
+<h1><%= @list.name %></h1>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @list.name %>
+</p>
+
+<ol>
+  <% for trip in @list.trips %>
+  <li><%= h trip.weather %></li>
+  <% end %>
+</ol>
+
+<p>
+  <%= link_to "Edit", edit_list_path(@list) %> |
+  <%= link_to "Destroy", @list, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", lists_path %>
+</p>

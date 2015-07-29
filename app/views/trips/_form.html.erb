@@ -1,0 +1,25 @@
+<%form_for @trip do |f| %>
+<%= f.error_messages %>
+<p>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+</p>
+
+<% f.fields_for :kids do |builder| %>
+<p>
+	<%= builder.label :content, "Tot" %><br />
+	<%= builder.text_area :content, :rows => 3 %>
+	<%= builder.check_box :_destroy %>
+    <%= builder.label :_destroy, "Remove Question" %>
+</p>
+<p><%= f.submit "Submit" %></p>
+<% end %>
+
+
+
+
+
+
+
+
+<%= %>

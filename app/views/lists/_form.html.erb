@@ -1,0 +1,11 @@
+<%form_for @list do |f| %>
+<%= f.error_messages %>
+<p>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</p>
+<% f.fields_for :trips do |builder| %>
+  <%= render 'trip_fields', :f => builder %>
+<% end %>
+<p><%= f.submit "Submit" %></p>
+<% end %>
